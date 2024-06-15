@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   font-family: "Gagalin", sans-serif;
-  background-color: rgb(211, 5, 5);
+  background-color: #EADBBE;
 }
 
 .margin {
@@ -32,6 +32,8 @@
     object-fit: cover;
   }
 }
+/* VARIABLES */
+/* MIXINS */
 .escuchanos1 {
   grid-area: escuchanos1;
 }
@@ -57,8 +59,8 @@
 @media only screen and (min-width: 501px) {
   .vid-inicio {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: 60px 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 10px;
     grid-template-areas: "escuchanos1 escuchanos2" "youtube spotify";
   }
@@ -172,6 +174,8 @@ footer .footer-container .ft-logo {
     object-fit: cover;
   }
 }
+/* VARIABLES */
+/* MIXINS */
 /* PAGINAS */
 main .main-txt {
   font-size: small;
@@ -184,10 +188,10 @@ main div img {
 main .bio-img-container {
   margin: 0 20px;
   display: grid;
-  grid-template-columns: 1fr 2fr;
   grid-template-rows: repeat(2, 1fr);
-  column-gap: 10px;
+  grid-template-columns: 1fr 2fr;
   row-gap: 10px;
+  column-gap: 10px;
 }
 main .bio-img-container .bio-img-3 {
   grid-column: span 2;
@@ -233,16 +237,16 @@ main div .main-txt {
   }
   main .bio-img-container {
     margin: 10px 20px;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
     grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
   }
   main .integrantes-fot {
     margin: 10px 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 500px 400px;
-    column-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
     row-gap: 10px;
+    column-gap: 10px;
     padding-bottom: 20px;
   }
   main .integrantes-fot .int-img-1, main .integrantes-fot .int-img-2 {
@@ -252,10 +256,14 @@ main div .main-txt {
 }
 .shows {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 48% 48%;
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   height: 30vh;
+}
+
+.ul-gen {
+  color: #7E7564;
 }
 
 @media only screen and (max-width: 1170px) {
@@ -297,78 +305,93 @@ main div .main-txt {
   }
 }
 /* MUSICA PAG */
-.musica {
-  display: grid;
-  row-gap: 15px;
-  height: 75%;
-  margin: 15px 15px 0px 15px;
-  align-items: center;
-  padding-bottom: 15px;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 1fr;
-  column-gap: 10px;
-  justify-items: center;
-  grid-template-areas: "portada1 portada2" "album1 album2" "info-nena info-contigo" "clip1 clip2" "cl-nena cl-cont" "ofi1 ofi2" "nena contigo";
-}
-.musica #portada1 {
-  grid-area: portada1;
-}
-.musica #portada2 {
-  grid-area: portada2;
-}
-.musica #album1 {
-  grid-area: album1;
-}
-.musica #album2 {
-  grid-area: album2;
-}
-.musica #clip1 {
-  grid-area: clip1;
-}
-.musica #clip2 {
-  grid-area: clip2;
-}
-.musica #cl-nena {
-  grid-area: cl-nena;
-}
-.musica #cl-cont {
-  grid-area: cl-cont;
-}
-.musica #info-nena {
-  grid-area: info-nena;
-}
-.musica #info-contigo {
-  grid-area: info-contigo;
-}
-.musica #ofi1 {
-  grid-area: ofi1;
-}
-.musica #ofi2 {
-  grid-area: ofi2;
-}
-.musica #nena {
-  grid-area: nena;
-}
-.musica #contigo {
-  grid-area: contigo;
-}
-.musica .ul-es {
+.ul-es {
+  color: #7E7564;
   display: grid;
   justify-content: center;
 }
-.musica .portadas {
-  width: 30%;
-  height: 100%;
-  display: grid;
-  justify-self: center;
-  object-fit: cover;
-}
-.musica .album {
-  display: grid;
-  justify-self: center;
-  align-self: baseline;
-}
 
+@media only screen and (max-width: 500px) {
+  .musica {
+    display: grid;
+    height: 75%;
+    margin: 15px 15px 0px 15px;
+    align-items: center;
+    padding-bottom: 15px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    row-gap: 15px;
+    column-gap: 10px;
+    justify-items: center;
+    grid-template-areas: "portada1" "album1" "ver1" "nena" "portada2" "album2" "ver2";
+  }
+  .musica #portada1 {
+    width: 50%;
+    grid-area: portada1;
+  }
+  .musica #portada2 {
+    width: 50%;
+    grid-area: portada2;
+  }
+  .musica #album1 {
+    grid-area: album1;
+  }
+  .musica #album2 {
+    grid-area: album2;
+  }
+  .musica .card-body {
+    background-color: #7E7564;
+  }
+  .musica .btn-primary {
+    background-color: #7E7564;
+  }
+  .musica #ver1 {
+    justify-self: center;
+    grid-area: ver1;
+  }
+  .musica #ver2 {
+    justify-self: center;
+    grid-area: ver2;
+  }
+  .musica #vernena, .musica #vercontigo {
+    width: 100%;
+    height: 200px;
+  }
+  .musica .info-nena {
+    display: none;
+  }
+  .musica .info-contigo {
+    display: none;
+  }
+  .musica #ofi1 {
+    display: none;
+    grid-area: ofi1;
+  }
+  .musica #ofi2 {
+    display: none;
+    grid-area: ofi2;
+  }
+  .musica #nena {
+    display: none;
+    grid-area: nena;
+  }
+  .musica #contigo {
+    display: none;
+    grid-area: contigo;
+  }
+  .musica .portadas {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-self: center;
+    object-fit: cover;
+  }
+  .musica .album {
+    display: grid;
+    justify-self: center;
+    align-self: baseline;
+  }
+}
 @media only screen and (max-width: 660px) {
   #nena, #contigo {
     width: 90%;
@@ -376,6 +399,87 @@ main div .main-txt {
   }
   #promo1, #promo2 {
     display: none;
+  }
+}
+@media only screen and (min-width: 501px) {
+  .musica {
+    display: grid;
+    height: 75%;
+    margin: 15px 15px 0px 15px;
+    align-items: center;
+    padding-bottom: 15px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50% 50%;
+    row-gap: 15px;
+    column-gap: 10px;
+    justify-items: center;
+    grid-template-areas: "portada1 portada2" "album1 album2" "info-nena info-contigo" "clip1 clip2" "cl-nena cl-cont" "ofi1 ofi2" "nena contigo";
+  }
+  .musica #portada1 {
+    grid-area: portada1;
+  }
+  .musica #portada2 {
+    grid-area: portada2;
+  }
+  .musica #album1 {
+    grid-area: album1;
+  }
+  .musica #album2 {
+    grid-area: album2;
+  }
+  .musica #ver1 {
+    display: none;
+  }
+  .musica #ver2 {
+    display: none;
+  }
+  .musica #vernena {
+    display: none;
+  }
+  .musica #vercontigo {
+    display: none;
+  }
+  .musica #clip1 {
+    grid-area: clip1;
+  }
+  .musica #clip2 {
+    grid-area: clip2;
+  }
+  .musica #cl-nena {
+    grid-area: cl-nena;
+  }
+  .musica #cl-cont {
+    grid-area: cl-cont;
+  }
+  .musica #info-nena {
+    grid-area: info-nena;
+  }
+  .musica #info-contigo {
+    grid-area: info-contigo;
+  }
+  .musica #ofi1 {
+    grid-area: ofi1;
+  }
+  .musica #ofi2 {
+    grid-area: ofi2;
+  }
+  .musica #nena {
+    grid-area: nena;
+  }
+  .musica #contigo {
+    grid-area: contigo;
+  }
+  .musica .portadas {
+    width: 30%;
+    height: 100%;
+    display: grid;
+    justify-self: center;
+    object-fit: cover;
+  }
+  .musica .album {
+    display: grid;
+    justify-self: center;
+    align-self: baseline;
   }
 }
 @media only screen and (min-width: 501px) {
@@ -395,6 +499,15 @@ main div .main-txt {
 .contactos {
   margin: 15px 15px 0px 15px;
   padding-bottom: 15px;
+}
+
+.contacto {
+  height: 50px;
+  align-items: center;
+  justify-items: center;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 input {
@@ -417,11 +530,73 @@ textarea {
   margin-left: 20px;
 }
 
-header img{
-    width: 70% ;
-    justify-content: center;
+@media only screen and (max-width: 500px) {
+  #rider, #dossier {
+    display: none;
+  }
 }
-.margin{
-    
-    padding: 10px;
+@media only screen and (min-width: 501px) and (max-width: 990px) {
+  .contacto {
+    height: 75px;
+  }
+  .botones-c a {
+    border-style: solid;
+    border-color: rgb(116, 97, 83);
+    font-size: 40px;
+    width: 65px;
+    line-height: 60px;
+    border-radius: 60%;
+  }
 }
+@media only screen and (min-width: 991px) {
+  main div p {
+    font-size: large;
+  }
+  .contacto {
+    height: 100px;
+  }
+  .contactos .page-title {
+    display: none;
+  }
+  .botones-c a {
+    border-style: solid;
+    border-color: rgb(116, 97, 83);
+    font-size: 50px;
+    width: 80px;
+    line-height: 75px;
+    border-radius: 60%;
+  }
+  .consulta {
+    font-size: x-large;
+  }
+  #consulta {
+    width: 600px;
+  }
+  #form-rider {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "formm rider" "formm dossier";
+  }
+  #formm {
+    grid-area: formm;
+    grid-row: span 2;
+  }
+  #rider {
+    color: #7E7564;
+    align-self: center;
+    grid-area: rider;
+  }
+  #rider a {
+    color: cornflowerblue;
+  }
+  #dossier {
+    color: #7E7564;
+    grid-area: dossier;
+  }
+  #dossier a {
+    color: cornflowerblue;
+  }
+}
+
+/*# sourceMappingURL=styles2.css.map */

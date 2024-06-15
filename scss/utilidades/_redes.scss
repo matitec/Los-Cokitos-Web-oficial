@@ -1,3 +1,5 @@
+@import "variables";
+
 .escuchanos1{
     grid-area: escuchanos1;
 }
@@ -19,8 +21,7 @@
     
     .vid-inicio{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 60px 1fr;
+        @include gridsizes(60px 1fr, 1fr 1fr);  
         column-gap: 10px;
         grid-template-areas: 
         "escuchanos1 escuchanos2"

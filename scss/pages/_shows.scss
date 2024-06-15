@@ -1,20 +1,20 @@
 .shows{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 48% 48%;
+    @include gridsizes(48% 48%, repeat(3, 1fr));
     justify-items: center;
     height: 30vh;
 }
+.ul-gen{
+    color: $linkcolor;
+}
 @media only screen and (max-width: 1170px){
     nav #vivo iframe{
-        width: 100%;
-        height: 100%;
+        @include sizes(100%, 100%)
     }
 }
 @media only screen and (min-width: 601px) and (max-width: 1170px){
     #vivo{
-        grid-template-rows: repeat(2, 250px);
-        grid-template-columns: repeat(2, 1fr);
+        @include gridsizes(repeat(2, 250px), repeat(2, 1fr));
     }
 }
 @media only screen and (min-width: 601px){
@@ -26,8 +26,7 @@
     #vivo{
         display: grid;
         justify-content: center;
-        row-gap: 10px;
-        column-gap: 10px;
+        @include gridgap(10px, 10px);
         grid-template-areas: 
             "vid-1 vid-2"
             "vid-3 vid-4";
@@ -45,85 +44,176 @@
 
 
 /* MUSICA PAG */
-.musica{
+
+.ul-es{
+    color: $linkcolor;
     display: grid;
-    row-gap: 15px;
-    height: 75%;
-    margin: 15px 15px 0px 15px;
-    align-items: center;
-    padding-bottom: 15px;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr;
-    column-gap: 10px;
-    justify-items: center;
-    grid-template-areas: 
-    "portada1 portada2"
-    "album1 album2"
-    "info-nena info-contigo"
-    "clip1 clip2"
-    "cl-nena cl-cont"
-    "ofi1 ofi2"
-    "nena contigo";
-    #portada1{
-        grid-area: portada1;}
-    #portada2{
-        grid-area: portada2;}
-    #album1{
-        grid-area: album1;}
-    #album2{
-        grid-area: album2;}
-    #clip1{
-        grid-area: clip1;}
-    #clip2{
-        grid-area: clip2;}
-    #cl-nena{
-        grid-area: cl-nena;}
-    #cl-cont{
-        grid-area: cl-cont;}      
-    #info-nena{
-        grid-area: info-nena;}
-    #info-contigo{
-        grid-area: info-contigo;}     
-    #ofi1{
-        grid-area: ofi1;}    
-    #ofi2{
-        grid-area: ofi2;}
-    #nena{
-        grid-area: nena;}
-    #contigo{
-        grid-area: contigo;}
-    .ul-es{
+    justify-content: center;}
+@media only screen and (max-width: 500px){
+    .musica{
         display: grid;
-        justify-content: center;}
-    .portadas{
-        width: 30%;
-        height: 100%;
-        display: grid;
-        justify-self: center;
-        object-fit: cover;
+        height: 75%;
+        margin: 15px 15px 0px 15px;
+        align-items: center;
+        padding-bottom: 15px;
+        @include gridsizes(1fr, 100%);
+        @include gridgap(15px, 10px);
+        justify-items: center;
+        grid-template-areas: 
+        "portada1"
+        "album1"
+        "ver1"
+        "nena"
+        "portada2"
+        "album2"
+        "ver2"
+        ;
+        #portada1{
+            width: 50%;
+            grid-area: portada1;}
+        #portada2{
+            width: 50%;
+            grid-area: portada2;}
+        #album1{
+            grid-area: album1;}
+        #album2{
+            grid-area: album2;}
+        .card-body{
+            background-color: $fondo2;
+        }
+        .btn-primary{
+            background-color: $fondo2;
+        }
+        #ver1{
+            justify-self: center;
+            grid-area: ver1;
+        }
+        #ver2{
+            justify-self: center;
+            grid-area: ver2;
+        }
+        #vernena, #vercontigo{
+            @include sizes(100%, 200px);
+
+        }
+        .info-nena{
+            display: none;
+            }
+        .info-contigo{
+            display: none;
+            }     
+        #ofi1{
+            display: none;
+            grid-area: ofi1;}    
+        #ofi2{
+            display: none;
+            grid-area: ofi2;}
+        #nena{
+            display: none;
+            grid-area: nena;}
+        #contigo{
+            display: none;
+            grid-area: contigo;}
+        .portadas{
+            @include sizes(100%, 100%);
+            display: grid;
+            justify-self: center;
+            object-fit: cover;
+        }
+        .album{
+            display: grid;
+           justify-self: center;
+           align-self: baseline;
+        }
     }
-    .album{
-        display: grid;
-       justify-self: center;
-       align-self: baseline;
-    }
-    
 }
+
+
 @media only screen and (max-width: 660px){
     
     #nena, #contigo{
-        width: 90%;
-        height: 90%;
+        @include sizes(90%, 90%);
     }
     #promo1, #promo2{
         display: none;
     }
 }
-
+@media only screen and (min-width: 501px){
+    .musica{
+        display: grid;
+        height: 75%;
+        margin: 15px 15px 0px 15px;
+        align-items: center;
+        padding-bottom: 15px;
+        @include gridsizes(1fr, 50% 50%);
+        @include gridgap(15px, 10px);
+        justify-items: center;
+        grid-template-areas: 
+        "portada1 portada2"
+        "album1 album2"
+        "info-nena info-contigo"
+        "clip1 clip2"
+        "cl-nena cl-cont"
+        "ofi1 ofi2"
+        "nena contigo";
+        #portada1{
+            grid-area: portada1;}
+        #portada2{
+            grid-area: portada2;}
+        #album1{
+            grid-area: album1;}
+        #album2{
+            grid-area: album2;}
+        #ver1{
+            display: none;
+        }
+        #ver2{
+            display: none;
+        }
+        #vernena{
+            display: none;
+        }
+        #vercontigo{
+            display: none;
+        }   
+        #clip1{
+            grid-area: clip1;}
+        #clip2{
+            grid-area: clip2;}
+        #cl-nena{
+            grid-area: cl-nena;}
+        #cl-cont{
+            grid-area: cl-cont;}      
+        #info-nena{
+            grid-area: info-nena;}
+        #info-contigo{
+            grid-area: info-contigo;}     
+        #ofi1{
+            grid-area: ofi1;}    
+        #ofi2{
+            grid-area: ofi2;}
+        #nena{
+            grid-area: nena;}
+        #contigo{
+            grid-area: contigo;}
+        
+        .portadas{
+            @include sizes(30%, 100%);
+            display: grid;
+            justify-self: center;
+            object-fit: cover;
+        }
+        .album{
+            display: grid;
+           justify-self: center;
+           align-self: baseline;
+        }
+        
+    }
+}
 @media only screen and (min-width: 501px){
     #nena, #contigo{
-        width: 100%;
-        height: 250px;
+        @include sizes(100%, 250px)
     }
     #contigo{
         padding-right: 15px;
