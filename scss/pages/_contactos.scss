@@ -1,7 +1,12 @@
 .contactos{
     margin: 15px 15px 0px 15px;
-    padding-bottom: 15px;
 }
+label{
+    width: 100%;
+    font-size: 0.9em;
+}
+
+
 
 .contacto{
     height: 50px;
@@ -29,15 +34,71 @@ textarea{
     margin-left: 20px;
 }
 
+
+@media only screen and (max-width: 500px){
+    .input{
+        width: 80%;
+        padding: 2px 6px;
+        font-size: 0.85em;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+    #consulta{
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 90%;
+    }
+    .submit{
+        border: 2px solid black;
+        width: 25%;
+        background-color: $fondo2;
+        color: #EADBBE;
+        font-size: 1.2em;
+        border-radius: 6px;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
+}
+
 @media only screen and (max-width: 990px){
     #rider, #dossier{
         display: none;
     }
 }
 
+@media only screen and (min-width: 501px){
+  
+    .input{
+        width: 50%;
+        padding: 2px 6px;
+        font-size: 0.9em;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+    .submit{
+        border: 3px solid black;
+        width: 12%;
+        padding: 2px;
+        background-color: $fondo2;
+        color: #EADBBE;
+        font-size: 1em;
+        border-radius: 6px;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }    
+    #consulta{
+        border: 3px solid black;
+        border-radius: 10px;
+        width: 60%;
+    }
+}
+
 @media only screen and (min-width: 501px) and (max-width:990px){
     .contacto{
         height: 75px;
+    }
+    label{
+        font-size: 1.2em;
     }
     .botones-c a{
         border-style: solid;
@@ -69,13 +130,23 @@ textarea{
      line-height: 75px;
      border-radius: 60%
     }
-    
+    .input{
+        width: 50%;
+        padding: 2px 6px;
+        font-size: 0.85em;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+
     .consulta{
         font-size: x-large;
     }
 
     #consulta{
-        width: 600px;
+        border: 3px solid black;
+        border-radius: 10px;
+        width: 60%;
+        padding: 5px;
     }
     #form-rider{
         display: grid;
@@ -89,19 +160,46 @@ textarea{
         grid-row: span 2;
     }
     
-    #rider{
-        color: $linkcolor;
-        align-self: center;
-        grid-area: rider;
-        a{
-            color: cornflowerblue;
+    #rider, #dossier{
+        border: 3px solid #00000059;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #7e7564cc;
+        color: #dfcfaf;
+        box-shadow: 0 0 40px 0 #0007;
+        h4{
+            letter-spacing: 0.7px;
+            text-shadow: 1px 1px 0 black;
         }
-}
-    #dossier{
-        color: $linkcolor;
-        grid-area: dossier;
+        h4,a{
+            font-size: auto;
+            background-color: #7E756411;
+        }
         a{
-            color: cornflowerblue;
+            text-shadow: none;
+            color: rgb(55, 118, 236);
         }
     }
+    #rider{
+        grid-area: rider;
+        align-self: center;
+    }
+    #dossier{
+        align-self: start;
+        grid-area: dossier;
+      }
+          
+    .submit{
+       border: 3px solid black;
+       padding: 2px;
+       background-color: $fondo2;
+       color: #EADBBE;
+       font-size: 1em;
+       border-radius: 6px;
+       margin-bottom: 5px;
+       letter-spacing: 1px;
+       width: 12%;
+
+}
+    
 }

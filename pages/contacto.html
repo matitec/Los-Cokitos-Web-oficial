@@ -54,7 +54,6 @@
     <div class="contactos">
         <h2>CONTRATACIONES: matias garcia</h2>
         <h4 class="page-title">HABLANOS</h4>
-        <!-- https://www.instagram.com/direct/t/17846044541836770 -->
         <div class="contacto">
           <span class="botones-c">
             <a href="https://wa.me/541173600399" target="_blank" class="fa fa-whatsapp"></a>
@@ -73,18 +72,27 @@
       <h2>O dejanos tu consulta y te responderemos a la brevedad</h2>
         
         <form class="consulta" action="consulta.php" method="post ">
-            <label for="">Nombre y Apellido*</label><br>
-            <input type="text" name="nombre" id="nombre" placeholder="ej: Matias Garcia"><br><br>
-            <label for="">Email*</label><br>
-            <input type="text" name="mail" id="mail" placeholder="ej: hola@gmail.com"><br><br>
-            <label for="">Numero de Whatsapp</label><br>
-            <input type="text" name="number" id="number" placeholder="ej: +5412316171"><br><br>
-            <label for="">Tipo de Evento o Asunto</label><br>
-            <input type="text" name="asunto" id="asunto" placeholder="ej: Casamiento"><br><br>
-    
-            <label for="">Comentanos tu consulta*</label><br>
-            <textarea name="consulta" id="consulta" cols="30" rows="10"></textarea><br><br>
-            <input type="submit" value="Enviar">
+          <div>
+            <label for="nombre">Nombre y Apellido*</label>
+            <input required class="input" type="text" name="nombre" id="nombre" placeholder="ej: Matias Garcia">
+          </div>
+          <div>
+            <label for="mail">Email*</label>
+            <input required class="input" type="email" name="mail" id="mail" placeholder="ej: hola@gmail.com"></div>
+          <div>
+            <label for="number">Numero de Whatsapp</label>
+            <input required class="input" type="number" name="number" id="number" placeholder="ej: +5412316171">
+          </div>
+          <div>
+            <label for="asunto">Tipo de Evento o Asunto</label>
+            <input class="input" type="text" name="asunto" id="asunto" placeholder="ej: Casamiento">
+          </div>
+            <label for="consulta">Comentanos tu consulta*</label>
+            <div>
+              <textarea name="consulta" id="consulta" cols="30" rows="10"></textarea>
+            </div>
+            
+            <input class="submit" type="submit" value="Enviar">
         </form>
     </div>
     
